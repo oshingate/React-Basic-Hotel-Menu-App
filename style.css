@@ -161,14 +161,14 @@ h1 {
   cursor: pointer;
 }
 .active {
-  background-color: green;
+  background-color: orange;
   color: wheat;
 }
 .jsb {
   justify-content: space-between;
 }
 .disabled {
-  background-color: rgb(235, 68, 68);
+  background-color: rgb(26, 26, 56);
   color: wheat;
 }
 
@@ -182,11 +182,12 @@ h1 {
 img {
   width: 100%;
   height: 10rem;
+  border-radius: 10px;
 }
 .card-img-div {
   flex: 0 1 48%;
   margin: 1%;
-  border: 2px solid orange;
+  /* border: 2px solid orange; */
 }
 .card-right-div {
   flex: 0 1 48%;
@@ -196,11 +197,19 @@ img {
   box-shadow: 4px 4px 4px gray;
   padding: 1rem;
   border-radius: 10px;
-  background-color: white;
+  background-color: rgba(197, 194, 194, 0.301);
 }
 body {
   background-color: rgb(228, 226, 226);
   font-family: 'Fira Sans', sans-serif;
+  background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.684),
+      rgba(0, 0, 0, 0.684)
+    ),
+    url('./images/hotel3.jpg') no-repeat center center fixed;
+
+  background-size: cover;
 }
 .card-right-div h2 {
   font-size: 1.5rem;
@@ -220,6 +229,6 @@ body {
 h1 {
   text-align: center;
   font-weight: 900;
-  color: rgb(11, 11, 70);
+  color: rgb(136, 136, 240);
   text-decoration: underline;
 }
