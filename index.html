@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Question and Answer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/7c7efbb78c.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container" id="root"></div>
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <!-- Load our React component. -->
+    <script type="text/babel">
+      let data = [
+        {
+          id: 1,
+          title: 'buttermilk pancakes',
+          category: 'breakfast',
+          price: 15.99,
+          img: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Zm9vZHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+          desc: "I'm baby woke mlkshk wolf bitters live-edge blue bottle, hammock freegan copper mug whatever cold-pressed ",
+        },
+        {
+          id: 2,
+          title: 'diner double',
+          category: 'lunch',
+          price: 13.99,
+          img: 'https://images.unsplash.com/photo-1499028344343-cd173ffc68a9?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fGZvb2R8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+          desc: 'vaporware iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Marfa thundercats ',
+        },
+        {
+          id: 3,
+          title: 'godzilla milkshake',
+          category: 'shakes',
+          price: 6.99,
+          img: 'https://images.unsplash.com/photo-1493770348161-369560ae357d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGZvb2R8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+          desc: 'ombucha chillwave fanny pack 3 wolf moon street art photo booth before they sold out organic viral.',
+        },
+        {
+          id: 4,
+          title: 'country delight',
+          category: 'breakfast',
+          price: 20.99,
+          img: 'https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjN8fGZvb2R8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+          desc: 'Shabby chic keffiyeh neutra snackwave pork belly shoreditch. Prism austin mlkshk truffaut, ',
+        },
+        {
+          id: 5,
+          title: 'egg attack',
+          category: 'lunch',
+          price: 22.99,
+          img: 'https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjl8fGZvb2R8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+          desc: "franzen vegan pabst bicycle rights kickstarter pinterest meditation farm-to-table 90's pop-up ",
+        },
+        {
+          id: 6,
+          title: 'oreo dream',
+          category: 'shakes',
+          price: 18.99,
+          img: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzZ8fGZvb2R8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+          desc: 'Portland chicharrones ethical edison bulb, palo santo craft beer chia heirloom iPhone everyday',
+        },
+        {
+          id: 7,
+          title: 'bacon overflow',
+          category: 'breakfast',
+          price: 8.99,
+          img: 'https://images.unsplash.com/photo-1432139555190-58524dae6a55?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzl8fGZvb2R8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+          desc: 'carry jianbing normcore freegan. Viral single-origin coffee live-edge, pork belly cloud bread iceland put a bird ',
+        },
+        {
+          id: 8,
+          title: 'american classic',
+          category: 'lunch',
+          price: 12.99,
+          img: 'https://images.unsplash.com/photo-1470324161839-ce2bb6fa6bc3?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDB8fGZvb2R8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+          desc: 'on it tumblr kickstarter thundercats migas everyday carry squid palo santo leggings. Food truck truffaut  ',
+        },
+        {
+          id: 9,
+          title: 'quarantine buddy',
+          category: 'shakes',
+          price: 16.99,
+          img: 'https://images.unsplash.com/photo-1496116218417-1a781b1c416c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDZ8fGZvb2R8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+          desc: 'skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.',
+        },
+      ];
+
+      let arrOftags = data.reduce((acc, cv) => {
+        if (!acc.includes(cv.category)) {
+          acc.push(cv.category);
+        }
+        return acc;
+      }, []);
+
+      class App extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+            active: 'all',
+          };
+        }
+
+        handleActive = (value) => {
+          this.setState({
+            active: value,
+          });
+        };
+
+        render() {
+          let arr;
+          if (this.state.active === 'all') {
+            arr = data;
+          } else {
+            arr = data.filter((elem) => {
+              if (elem.category === this.state.active) {
+                return true;
+              } else {
+                return false;
+              }
+            });
+          }
+          console.log('arr', arr);
+          return (
+            <div className='main-div'>
+              <section className='sec-padding'>
+                <h1>Our Menu</h1>
+              </section>
+              <section className='tags-sec sec-padding'>
+                <div className='tags-div'>
+                  <button
+                    onClick={() => this.handleActive('all')}
+                    key='all'
+                    className={
+                      this.state.active === 'all'
+                        ? 'btn active'
+                        : 'btn disabled'
+                    }
+                  >
+                    All
+                  </button>
+                  {arrOftags.map((ele, i) => {
+                    return (
+                      <button
+                        onClick={() => this.handleActive(ele)}
+                        key={ele}
+                        className={
+                          this.state.active === ele
+                            ? 'btn active'
+                            : 'btn disabled'
+                        }
+                      >
+                        {ele}
+                      </button>
+                    );
+                  })}
+                </div>
+              </section>
+              <section className='sec-padding container'>
+                <div className='cards-div flex'>
+                  {arr.map((elem, i) => {
+                    return (
+                      <article className='card flex-50 flex'>
+                        <div className='card-img-div'>
+                          <img src={elem.img} alt='img1' />
+                        </div>
+                        <div className='card-right-div'>
+                          <div className='flex jsb'>
+                            <h2>{elem.title}</h2>
+                            <span>${elem.price}</span>
+                          </div>
+                          <hr />
+                          <p>{elem.desc}</p>
+                        </div>
+                      </article>
+                    );
+                  })}
+                </div>
+              </section>
+            </div>
+          );
+        }
+      }
+
+      ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+  </body>
+</html>
